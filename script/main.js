@@ -38,7 +38,7 @@ function getArtistTitle(artist,title){
     .then(lyrics => showLyrics(lyrics,title));
 }
 
-function showLyrics(lyrics,title){
+function showLyrics(lyrics = "there have no lyrics",title){
     document.getElementById('displayLyrics').innerText = lyrics.lyrics;
     document.getElementById('songTitle').innerText = title;
 }
