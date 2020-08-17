@@ -35,10 +35,14 @@ function getSerchResult(search){
 function getArtistTitle(artist,title){
     fetch(`https://api.lyrics.ovh/v1/${artist}/${title}`)
     .then(response => response.json())
-    .then(lyrics => showLyrics(lyrics,title));
+    .then(song => showLyrics(song,title));
 }
 
-function showLyrics(lyrics,title){
-    document.getElementById('displayLyrics').innerText = lyrics.lyrics;
+function showLyrics(song,title){
+    if(song.lyrics == undefined){
+        document.getElementById('displayLyrics').innerText = "there have no lyrics";
+    }else{
+        document.getElementById('displayLyrics').innerText = song.lyrics;
+    }
     document.getElementById('songTitle').innerText = title;
 }
