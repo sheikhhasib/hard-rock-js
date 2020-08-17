@@ -9,9 +9,11 @@ searchButton.addEventListener('click',function(){
 })
 
 function getSerchResult(search){
+    // console.log(search);
     let parent = document.getElementById('parent');
     for(let i = 0; i<10 ;i++){
         let title = search.data[i].title;
+        let albumTitle = search.data[i].album.title;
         let artist = search.data[i].artist.name;
         let image = search.data[i].artist.picture_small;
         
@@ -19,6 +21,7 @@ function getSerchResult(search){
             <div class="col-md-8">
                 <h3 class="lyrics-name" id="title">${title}</h3>
                 <p class="author lead">Album by <span id="artistName">${artist}</span></p>
+                <p class="author lead">Album Title :  <span id="artistName">${albumTitle}</span></p>
             </div>
             <div class="col-md-1">
                 <img src="${image}" alt="">
