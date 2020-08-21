@@ -9,10 +9,10 @@ searchButton.addEventListener('click',function(){
         // document.getElementById('takeSearchLimit').addEventListener('click',function(){
             // let serchlimit = document.getElementById('serchlimit').value;
             // serchlimitNumber = parseInt(serchlimit);
-            search.data = search.data.slice(0,5);
+            // search.data = search.data.slice(0,5);
             let parent = document.getElementById('parent');
             parent.innerHTML = '';
-            for(let i = 0; i<search.data.length ;i++){
+            for(let i = 0; i<6 ;i++){
                 let title = search.data[i].title;
                 let albumTitle = search.data[i].album.title;
                 let artist = search.data[i].artist.name;
